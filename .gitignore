@@ -1,0 +1,7 @@
+.rvmrc
+Gemfile.lock
+mkmf.log
+*.o
+tmp/
+*.bundle
+Makefile
