@@ -5,3 +5,4 @@ mkmf.log
 tmp/
 *.bundle
 Makefile
+*.gem
