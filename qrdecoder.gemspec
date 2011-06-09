@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
 
   s.extensions = ["ext/qrdecoder_ext/extconf.rb"]
 
-  s.extra_rdoc_files = ["README.rdoc", "ext/qrdecoder_ext/qrdecoder_ext.c"]
-  s.files = Dir.glob("{bin,lib,ext}/**/*") + %w(History.txt README.rdoc) - ["lib/qrdecoder/qrdecoder_ext.bundle"]
+  s.extra_rdoc_files = ["README.rdoc"]
+  s.files = Dir.glob("{bin,lib,ext}/**/*") + %w(README.rdoc) - Dir.glob("{bin,lib,ext}/**/*.bundle")
 
   s.require_path = 'lib'
   s.required_rubygems_version = ">= 1.3.6"
