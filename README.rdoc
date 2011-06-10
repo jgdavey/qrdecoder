@@ -1,1 +1,101 @@
+QRDecoder is a ruby C extension that wraps
+libzxing[https://github.com/jgdavey/zxing-cpp]. libzxing is a C++ port of the
+ZXing[http://code.google.com/p/zxing/] java library.
 
+== DEPENDENCIES
+
+This project has the following dependencies:
+
+* libzxing (see the installation instruction)
+* ImageMagick with Magick++, MagickWand, MagickCore
+* libiconv [Preinstalled for OSX]
+
+== INSTALLATION
+
+=== Mac OSX
+
+NOTE: If you're using homebrew, the current formula does NOT include Magick++.
+
+Install the 'ImageMagick' library using homebrew:
+
+    brew install imagemagick --with-magic-plus-plus
+
+Install the 'libzxing' library using homebrew:
+
+    brew install libzxing
+
+Install the gem, or add it to your Gemfile
+
+    gem install qrdecoder
+    # OR
+    gem "qrdecoder", "~>0.1.0"
+
+=== Linux
+
+This library has not been tested on Linux, but may work (possibly with modifications).
+
+The source for libzxing is available on github[https://github.com/jgdavey/zxing-cpp]
+
+== USAGE
+
+To use, simply:
+
+    require 'qrdecoder'
+
+    QRDecoder.decode("path/to/image.jpg")
+
+
+== DEVELOPMENT AND CONTRIBUTING
+
+This project uses Bundler and its own gemspec for dependency management. To get
+started, just clone the repo and run:
+
+  gem install bundler
+  bundle install
+  rake
+
+The default Rake task will compile the C component and run the specs. If it
+fails to build, make sure that you have libzxing and ImageMagick with Magick++
+installed properly.
+
+Please send pull requests. Topic branches are preferred. New features will not
+be accepted without corresponding tests.
+
+== CONTRIBUTORS
+
+* Joshua Davey (jgdavey)
+* Dave Lyon (davelyon)
+
+== ATTRIBUTION
+
+ZXing[http://code.google.com/p/zxing/] (pronounced "zebra crossing") is an
+open-source, multi-format 1D/2D barcode image processing library implemented in
+Java.  Information regarding contributions and other ports available on the
+project hompage[http://code.google.com/p/zxing/].
+
+ZXing is licensed under the Apache License, Version 2.0.
+
+== LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2011 Joshua Davey, Dave Lyon
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
