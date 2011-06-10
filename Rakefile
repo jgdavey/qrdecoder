@@ -8,3 +8,11 @@ end
 RSpec::Core::RakeTask.new
 
 task :default => [:clean, :compile, :spec]
+
+gem 'rdoc'
+require 'rdoc/task'
+RDoc::Task.new do |rd|
+  rd.main = "README.rdoc"
+  rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
+  rd.rdoc_dir = "doc"
+end
