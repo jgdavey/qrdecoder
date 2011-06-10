@@ -69,4 +69,23 @@ describe QRDecoder do
       end
     end
   end
+
+  describe ".decode_url" do
+    subject { QRDecoder.decode_url(path) }
+    context "with an encoded url" do
+      let(:path) { qrcode_fixture("url.png") }
+      it { should be_kind_of URI }
+      it { subject.to_s.should == "http://davelyon.net" }
+    end
+    context "with no encoded url" do
+      let(:path) { qrcode_fixture("bacon.png") }
+      it { should be_nil }
+    end
+    context "with an unreachable file path" do
+      let(:path) {}
+      it "raises an error" do
+        expect { subject }.to raise_error(IOError)
+      end
+    end
+  end
 end
