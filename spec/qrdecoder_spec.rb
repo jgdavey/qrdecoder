@@ -3,6 +3,7 @@ require 'spec_helper'
 describe QRDecoder do
   describe ".decode" do
     subject { QRDecoder.decode(path) }
+
     context "with a path to a qrcode image" do
       context "with an encoded phrase" do
         let(:path) { qrcode_fixture("bacon.png") }
@@ -17,7 +18,26 @@ describe QRDecoder do
         let(:path) { qrcode_fixture("big-url.png") }
         it { should == "http://joshuadavey.com"}
       end
+      context "and a relative filepath" do
+        let(:path) { "spec/data/bacon.png" }
+        it { should == "Chunky Bacon!"}
+      end
+      context "and a relative filepath containing extra dots" do
+        let(:path) { "./spec/data/../data/bacon.png" }
+        it { should == "Chunky Bacon!"}
+      end
     end
+
+    context "with a Pathname object" do
+      let(:path) { Pathname.new qrcode_fixture("bacon.png") }
+      it { should == "Chunky Bacon!"}
+    end
+
+    context "with a File object" do
+      let(:path) { File.open qrcode_fixture("bacon.png") }
+      it { should == "Chunky Bacon!"}
+    end
+
     context "with a non-qrcode image" do
       let(:path) { qrcode_fixture("image.png") }
       it { should == nil }
