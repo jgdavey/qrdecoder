@@ -82,7 +82,7 @@ describe QRDecoder do
       it { should be_nil }
     end
     context "with an unreachable file path" do
-      let(:path) {}
+      let(:path) { '/foooo_bad_dir/nopath' }
       it "raises an error" do
         expect { subject }.to raise_error(IOError)
       end
