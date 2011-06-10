@@ -5,11 +5,11 @@ require 'uri'
 
 module QRDecoder
   def self.decode(path)
-    decode_from_path(absolute_path(path))
+    decode_from_path absolute_path(path)
   end
 
   def self.decode_url(path)
-    URI.parse(decode(path))
+    URI.parse decode(path)
   rescue URI::InvalidURIError
     nil
   end
