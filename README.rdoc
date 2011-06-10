@@ -2,6 +2,8 @@ QRDecoder is a ruby C extension that wraps
 libzxing[https://github.com/jgdavey/zxing-cpp]. libzxing is a C++ port of the
 ZXing[http://code.google.com/p/zxing/] java library.
 
+http://i.imgur.com/eWI8G.png
+
 == DEPENDENCIES
 
 This project has the following dependencies:
