@@ -34,9 +34,13 @@ Install the gem, or add it to your Gemfile
 
 === Linux
 
-This library has not been tested on Linux, but may work (possibly with modifications).
+Install the "ImageMagick" library with the following:
 
-The source for libzxing is available on github[https://github.com/jgdavey/zxing-cpp]
+Debian/Ubuntu:
+
+    sudo apt-get install libmagick++-dev
+
+Download and build libzxing[https://github.com/jgdavey/zxing-cpp] from source.
 
 == USAGE
 
