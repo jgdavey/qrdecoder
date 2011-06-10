@@ -42,14 +42,17 @@ describe QRDecoder do
       let(:path) { qrcode_fixture("image.png") }
       it { should == nil }
     end
+
     context "with a 'logoized' qrcode image" do
       let(:path) { qrcode_fixture("logo.jpg") }
       it { subject.strip.should == "http://www.celebrate-originality.jp/" }
     end
+
     context "with a 'colorized' qrcode image" do
       let(:path) { qrcode_fixture("colors.jpg") }
       it { subject.strip.should == "http://www.havas.com" }
     end
+
     context "with no arguments" do
       it "raises an error" do
         expect {
@@ -57,6 +60,7 @@ describe QRDecoder do
         }.to raise_error(ArgumentError)
       end
     end
+
     context "with an invalid file type" do
       it "raises an error" do
         expect {
