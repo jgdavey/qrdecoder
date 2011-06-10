@@ -28,7 +28,7 @@ using namespace zxing::qrcode;
 VALUE mQRDecoder;
 
 extern "C"
-VALUE _decode(VALUE klass, VALUE path) {
+VALUE _decode_from_path(VALUE klass, VALUE path) {
   VALUE r_str;
   Image image;
   char *filepath = StringValueCStr(path);
@@ -60,5 +60,5 @@ extern "C"
 void Init_qrdecoder_ext()
 {
     mQRDecoder = rb_define_module("QRDecoder");
-    rb_define_module_function(mQRDecoder, "decode", (VALUE(*)(...))_decode, 1);
+    rb_define_module_function(mQRDecoder, "decode_from_path", (VALUE(*)(...))_decode_from_path, 1);
 }
