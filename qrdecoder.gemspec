@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   Codes, a two-dimensional bar code format popular in Japan created by the Denso-Wave Corporation in 1994.}
   s.email = ['josh@joshuadavey.com', 'dave@davelyon.net']
   s.authors = ['Joshua Davey', 'Dave Lyon']
-  s.date     = '2011-06-08'
+  s.date     = '2011-07-17'
 
   s.extensions = ["ext/qrdecoder_ext/extconf.rb"]
 
