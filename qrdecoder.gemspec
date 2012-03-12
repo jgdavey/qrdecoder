@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.add_development_dependency "rspec", "~> 2.6.0"
   s.add_development_dependency "rake-compiler", "~> 0.7.5"
+  s.add_development_dependency "rdoc", "~> 3.12"
 
   s.test_files = Dir.glob("spec/**/*_spec.rb") + %w{spec/spec_helper.rb}
 end

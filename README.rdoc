@@ -50,6 +50,12 @@ To use, simply:
 
     QRDecoder.decode("path/to/image.jpg")
 
+Or:
+
+    git clone https://github.com/jgdavey/qrdecoder.git
+    cd qrdecoder
+    irb -Ilib -rqrdecoder
+    QRDecoder.decode("path/to/image.jpg")
 
 == DEVELOPMENT AND CONTRIBUTING
 
@@ -58,7 +64,7 @@ started, just clone the repo and run:
 
   gem install bundler
   bundle install
-  rake
+  rake or bundle exec rake
 
 The default Rake task will compile the C component and run the specs. If it
 fails to build, make sure that you have libzxing and ImageMagick with Magick++
