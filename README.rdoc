@@ -20,7 +20,7 @@ NOTE: If you're using homebrew, the current formula does NOT include Magick++.
 
 Install the 'ImageMagick' library using homebrew:
 
-    brew install imagemagick --with-magic-plus-plus
+    brew install imagemagick --with-magick-plus-plus
 
 Install the 'libzxing' library using homebrew:
 
